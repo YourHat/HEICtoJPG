@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HEICtoJPG_Converter"
         mc:Ignorable="d"
-        Title="KCSO" Height="550" Width="500" Icon="icon1.ico">
+        Title="KCSO Tech Unit" Height="550" Width="500" Icon="icon1.ico">
     <Window.Resources>
         <Storyboard x:Key="BlinkingStoryboard">
             <ColorAnimation Storyboard.TargetName="blinkingTextBlock" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" From="Black" To="White" AutoReverse="True" Duration="0:0:1" RepeatBehavior="Forever" />
