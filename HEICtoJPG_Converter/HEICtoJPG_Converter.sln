@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HEICtoJPG_Converter", "HEICtoJPG_Converter.csproj", "{08B5C806-471A-4DE1-95C4-2AAF8A1117C5}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HEICtoJPGConverter_Installer", "..\HEICtoJPGConverter_Installer\HEICtoJPGConverter_Installer.vdproj", "{C6ADB588-C50F-43D6-87EE-F4CDC683E337}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08B5C806-471A-4DE1-95C4-2AAF8A1117C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B5C806-471A-4DE1-95C4-2AAF8A1117C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B5C806-471A-4DE1-95C4-2AAF8A1117C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B5C806-471A-4DE1-95C4-2AAF8A1117C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6ADB588-C50F-43D6-87EE-F4CDC683E337}.Debug|Any CPU.ActiveCfg = Debug
+		{C6ADB588-C50F-43D6-87EE-F4CDC683E337}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17CD27CC-450A-4810-AD78-AF6F8E5138B4}
+	EndGlobalSection
+EndGlobal
