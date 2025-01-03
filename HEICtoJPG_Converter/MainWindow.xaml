@@ -21,16 +21,17 @@
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         <!--Comment-->
-
+       
         <StackPanel AllowDrop="True" Background="LightGray" Grid.Row="1" Margin="10" Drop="fileDropFunc">
-            <Label Name="filePathName" Content="Drag and Drop Files Here" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"></Label>
-            
+            <Label Name="filePathName" Content="Drag and Drop Files Here" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontFamily="Arial Rounded MT Bold"></Label>
+
         </StackPanel>
 
-        <Button Name="ConvButton" Width="200" Height="40" Margin=" 10" Content="Convert" FontSize="10" Click="ConvertHEICtoJPG" Grid.Row="4" ></Button>
-        <TextBlock Name="fileamount" Text=".." FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Row="2" Foreground="White" ></TextBlock>
-        <TextBlock Name="blinkingTextBlock" Text="Converting...." FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Row="3" Foreground="White" ></TextBlock>
-        <TextBlock Name="apptitle" Text="HEIC to JPG Converter" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Grid.Row="0"></TextBlock>
-    
+
+        <Button Name="ConvButton" Width="200" Height="40" Margin=" 10" Content="Convert" FontSize="10" Click="ConvertHEICtoJPG" Grid.Row="4" FontFamily="Arial Rounded MT Bold" ></Button>
+        <TextBlock Name="fileamount" Text=".." FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Row="2" Foreground="White" FontFamily="Arial Rounded MT Bold" ></TextBlock>
+        <TextBlock Name="blinkingTextBlock" Text="Converting...." FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Row="3" Foreground="White" FontFamily="Arial Rounded MT Bold" ></TextBlock>
+        <TextBlock Name="apptitle" Text="HEIC to JPG Converter" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Grid.Row="0" FontFamily="Arial Rounded MT Bold" Foreground="#FF252525"/>
+
     </Grid>
 </Window>
