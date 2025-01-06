@@ -43,18 +43,6 @@ namespace HEICtoJPG_Converter
                 filePathName.Content = filename;
             }
         }
-        private void OpenFileDialogFunc(object sender, DragEventArgs e)
-        {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "HEIC files | *.heic";
-            fileDialog.Title = "Please Pick a HEIC file....";
-            bool? success = fileDialog.ShowDialog();
-            if(success == true)
-            {
-                string path = fileDialog.FileName;
-                filePathName.Content = path;
-            }
-        }
         private async void ConvertHEICtoJPG(object sender, RoutedEventArgs e)
         {
             if ((string)filePathName.Content != "Drag and Drop Files Here")
