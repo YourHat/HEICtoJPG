@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FileFormat.HEIC" Version="24.11.0" />
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="14.4.0" />
   </ItemGroup>
 
 </Project>

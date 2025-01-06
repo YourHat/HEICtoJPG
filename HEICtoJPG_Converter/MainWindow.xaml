@@ -28,7 +28,7 @@
         </StackPanel>
 
 
-        <Button Name="ConvButton" Width="200" Height="40" Margin=" 10" Content="Convert" FontSize="10" Click="ConvertHEICtoJPG" Grid.Row="4" FontFamily="Arial Rounded MT Bold" ></Button>
+        <Button Name="ConvButton" Width="200" Height="40" Margin=" 10" Content="Convert" FontSize="20" Click="ConvertHEICtoJPG" Grid.Row="4" FontFamily="Arial Rounded MT Bold" ></Button>
         <TextBlock Name="fileamount" Text=".." FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Row="2" Foreground="White" FontFamily="Arial Rounded MT Bold" ></TextBlock>
         <TextBlock Name="blinkingTextBlock" Text="Converting...." FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Row="3" Foreground="White" FontFamily="Arial Rounded MT Bold" ></TextBlock>
         <TextBlock Name="apptitle" Text="HEIC to JPG Converter" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Grid.Row="0" FontFamily="Arial Rounded MT Bold" Foreground="#FF252525"/>

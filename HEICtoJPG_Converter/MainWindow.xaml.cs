@@ -1,4 +1,4 @@
-﻿using FileFormat.Heic.Decoder;
+﻿using ImageMagick;
 using Microsoft.Win32;
 using System;
 using System.IO;
@@ -38,8 +38,8 @@ namespace HEICtoJPG_Converter
                 {
                     filename += f + "\n";
                 }
-                
-                
+
+
                 filePathName.Content = filename;
             }
         }
@@ -66,6 +66,10 @@ namespace HEICtoJPG_Converter
                 int filedone = 0;
                 fileamount.Foreground = new SolidColorBrush(Colors.Black);
                 fileamount.Text = $"( {filedone} / {filetotal} )";
+
+                var converttasks = new List<Task>();
+                
+
                 foreach (var f in files)
                 {
                     if (Path.GetExtension((String)f).ToLower() == ".heic")
@@ -74,36 +78,32 @@ namespace HEICtoJPG_Converter
                         string filepath = f;
                         string filepathOut = f + ".jpg";
 
-                        await Task.Run(() =>
+                        var conversiontask = Task.Run(() =>
                         {
 
-                            using (var fs = new FileStream(filepath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                            using (MagickImage image = new MagickImage(filepath))
                             {
-                                HeicImage image = HeicImage.Load(fs);
-                                var pixels = image.GetByteArray(FileFormat.Heic.Decoder.PixelFormat.Bgra32);
-                                var width = (int)image.Width;
-                                var height = (int)image.Height;
+                                image.Format = MagickFormat.Jpeg;
+                                image.Write(filepathOut);
+                                Application.Current.Dispatcher.Invoke(() =>
+                                {
+                                    filedone++;
+                                    fileamount.Text = $"( {filedone} / {filetotal} )";
 
-                                var wbitmap = new WriteableBitmap(width, height, 72, 72, PixelFormats.Bgra32, null);
-                                var rect = new Int32Rect(0, 0, width, height);
-                                wbitmap.WritePixels(rect, pixels, 4 * width, 0);
-
-                                using FileStream saveStream = new FileStream(filepathOut, FileMode.OpenOrCreate);
-                                JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-                                encoder.Frames.Add(BitmapFrame.Create(wbitmap));
-                                encoder.Save(saveStream);
-
+                                });
                             }
                         });
 
+                        converttasks.Add(conversiontask);
                     }
                     else
                     {
                         MessageBox.Show($"{f} is not heic file");
                     }
-                    filedone++;
-                    fileamount.Text = $"( {filedone} / {filetotal} )";
+                    
                 }
+
+                await Task.WhenAll(converttasks);
                 filePathName.Content = "Drag and Drop Files Here";
                 blinkingStoryboard.Pause();
                 blinkingTextBlock.Foreground = new SolidColorBrush(Colors.Black);
@@ -116,6 +116,6 @@ namespace HEICtoJPG_Converter
 
         }
 
-        }
+    }
 
 }
